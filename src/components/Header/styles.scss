@@ -4,29 +4,37 @@
     margin: 4rem 0;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
   }
+
   &__logo{
     display: flex;
     align-items: center;
+
     &--state{
       margin-right: 1.2rem;
-      line-height: 2.1rem;
+      font-weight: 300;
+
       img{
         margin-right: 1.2rem;
       }
     }
+
     &--ebac{
       img{
         margin-left: 1.2rem;
       }
     }
+
     &__city{
       font-size: 1.8rem;
+      line-height: 1.8rem;
     }
+
     &__support{
       font-size: 1.2rem;
       line-height: 1.4rem;
+      font-weight: 400;
     }
   }
 }

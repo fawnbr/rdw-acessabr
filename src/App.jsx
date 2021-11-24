@@ -1,4 +1,6 @@
+import { Curator } from './components/Curator';
 import { Header } from './components/Header';
+import { Home } from './pages/Home';
 import './styles/styles.global.scss';
 
 function App() {
@@ -6,7 +8,9 @@ function App() {
     <div className="App">
       <div className="main__wrapper">
         <div className="main__container">
-          <Header />
+          <Header city="Natal" state="RN" />
+          <Home />
+          <Curator />
         </div>
       </div>
     </div>
