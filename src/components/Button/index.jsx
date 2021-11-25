@@ -3,7 +3,11 @@ import './styles.scss';
 
 export const Button = ({ children, onClick, width }) => {
   return (
-    <button onClick={onClick} style={`width: ${width}px;`}>
+    <button
+      className="button"
+      onClick={onClick}
+      style={{ width: width + 'rem' }}
+    >
       {children}
     </button>
   );
