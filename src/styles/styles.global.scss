@@ -15,7 +15,7 @@ body{
   color: $black;
 }
 
-.main {
+.main, .footer {
   &__wrapper{
     width: 100%;
     display: flex;
