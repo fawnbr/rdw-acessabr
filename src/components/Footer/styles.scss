@@ -9,6 +9,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
 
+
     p {
       width: 95%;
     }
@@ -17,7 +18,7 @@
   &__section{
 
     width: 100%;
-    padding: 4rem 0;
+    padding: 4rem 2rem;
 
     a{
       color: $lightBlue;

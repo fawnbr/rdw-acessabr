@@ -1,0 +1,9 @@
+@import '../../styles/colors';
+
+.button{
+  cursor: pointer;
+  border-radius: .5rem;
+  background-color: $green;
+  color: $white;
+  padding: .7rem 1rem;
+}
