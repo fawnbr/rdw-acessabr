@@ -1,11 +1,11 @@
-import './styles.scss';
 import { useState, useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { LocationContext } from '../../contexts/LocationContext';
 import { Pill } from '../../components/Pill';
-
-import highlightedImage from '../../assets/images/highlightedImage.png';
+import { LocationContext } from '../../contexts/LocationContext';
+import { PlacesContext } from '../../contexts/PlacesContext';
 import { places } from '../../utils/places';
+import highlightedImage from '../../assets/images/highlightedImage.png';
+import './styles.scss';
 
 export const Home = () => {
   const [selectedPill, setSelectedPill] = useState(null);
@@ -13,10 +13,16 @@ export const Home = () => {
   const { city, state } = useParams();
   const { setCity, setState } = useContext(LocationContext);
 
+  const { setPlace } = useContext(PlacesContext);
+
   useEffect(() => {
     setCity(city);
     setState(state);
   }, [setCity, setState, city, state]);
+
+  useEffect(() => {
+    setPlace(selectedPill);
+  }, [setPlace, selectedPill]);
 
   return (
     <main id="main-content" className="home__container">

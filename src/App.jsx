@@ -3,6 +3,7 @@ import { Footer } from './components/Footer';
 import { Places } from './components/Places';
 import { BrowserRouter } from 'react-router-dom';
 import { Routes } from './routes';
+import { PlacesProvider } from './contexts/PlacesContext';
 import './styles/styles.global.scss';
 
 function App() {
@@ -11,8 +12,10 @@ function App() {
       <div className="main__wrapper">
         <div className="main__container">
           <BrowserRouter>
-            <Routes />
-            <Places />
+            <PlacesProvider>
+              <Routes />
+              <Places />
+            </PlacesProvider>
             <Curator />
           </BrowserRouter>
         </div>
