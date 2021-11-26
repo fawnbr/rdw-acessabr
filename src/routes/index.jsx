@@ -3,14 +3,17 @@ import {
   BrowserRouter as Router,
   Routes as Switch,
 } from 'react-router-dom';
+import { LocationProvider } from '../contexts/LocationContext';
 import { Home } from '../pages/Home';
+import { Header } from '../components/Header';
 
-export const routes = () => {
+export const Routes = () => {
   return (
-    <Router>
+    <LocationProvider>
+      <Header />
       <Switch>
         <Route path="/:state/:city" element={<Home />} />
       </Switch>
-    </Router>
+    </LocationProvider>
   );
 };

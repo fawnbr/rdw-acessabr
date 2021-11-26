@@ -1,17 +1,27 @@
-import { useState } from 'react';
-
 import './styles.scss';
-import highlightedImage from '../../assets/images/highlightedImage.png';
-import { places } from '../../utils/places';
+import { useState, useContext, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { LocationContext } from '../../contexts/LocationContext';
 import { Pill } from '../../components/Pill';
 
+import highlightedImage from '../../assets/images/highlightedImage.png';
+import { places } from '../../utils/places';
+
 export const Home = () => {
-  const [selectedPill, setSelectedPill] = useState('');
+  const [selectedPill, setSelectedPill] = useState(null);
+
+  const { city, state } = useParams();
+  const { setCity, setState } = useContext(LocationContext);
+
+  useEffect(() => {
+    setCity(city);
+    setState(state);
+  }, [setCity, setState, city, state]);
 
   return (
     <main id="main-content" className="home__container">
       <div className="home__col">
-        <h1 className="home__title">São Paulo para todos</h1>
+        <h1 className="home__title">{city || 'São Paulo'} para todos</h1>
         <div className="home__image--highlighted hide-desktop">
           <img
             src={highlightedImage}

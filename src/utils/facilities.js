@@ -1,13 +1,13 @@
-import iconAudio from '../../assets/images/icon-audio-descricao.png';
-import iconBanheiro from '../../assets/images/icon-banheiro-acessivel.png';
-import iconBraile from '../../assets/images/icon-braile.png';
-import iconCaoGuia from '../../assets/images/icon-caoguia.png';
-import iconElevador from '../../assets/images/icon-elevador.png';
-import iconEstacionamento from '../../assets/images/icon-estacionamento.png';
-import iconPisoTatil from '../../assets/images/icon-piso-tatil.png';
-import iconPortaLarga from '../../assets/images/icon-porta-larga.png';
-import iconRampa from '../../assets/images/icon-rampa.png';
-import iconLibras from '../../assets/images/icon-libras.png';
+import iconAudio from '../assets/images/icon-audio-descricao.png';
+import iconBanheiro from '../assets/images/icon-banheiro-acessivel.png';
+import iconBraile from '../assets/images/icon-braile.png';
+import iconCaoGuia from '../assets/images/icon-caoguia.png';
+import iconElevador from '../assets/images/icon-elevador.png';
+import iconEstacionamento from '../assets/images/icon-estacionamento.png';
+import iconPisoTatil from '../assets/images/icon-piso-tatil.png';
+import iconPortaLarga from '../assets/images/icon-porta-larga.png';
+import iconRampa from '../assets/images/icon-rampa.png';
+import iconLibras from '../assets/images/icon-libras.png';
 
 export const facilities = [
   { id: 1, photo: iconBraile, text: 'Sinalização em Braile', checked: true },

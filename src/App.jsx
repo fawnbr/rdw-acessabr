@@ -1,8 +1,8 @@
 import { Curator } from './components/Curator';
 import { Footer } from './components/Footer';
-import { Header } from './components/Header';
 import { Places } from './components/Places';
-import { Home } from './pages/Home';
+import { BrowserRouter } from 'react-router-dom';
+import { Routes } from './routes';
 import './styles/styles.global.scss';
 
 function App() {
@@ -10,10 +10,11 @@ function App() {
     <div className="App">
       <div className="main__wrapper">
         <div className="main__container">
-          <Header city="Natal" state="RN" />
-          <Home />
-          <Places />
-          <Curator />
+          <BrowserRouter>
+            <Routes />
+            <Places />
+            <Curator />
+          </BrowserRouter>
         </div>
         <Footer />
       </div>
