@@ -24,6 +24,12 @@ export const Home = () => {
     <main id="main-content" className="home__container">
       <div className="home__col">
         <h1 className="home__title">São Paulo para todos</h1>
+        <div className="home__image--highlighted hide-desktop">
+          <img
+            src={highlightedImage}
+            alt="Cadeirante segurando uma esfera de discoteca"
+          />
+        </div>
         <p className="home__text">
           Nossa missão é facilitar o encontro entre lugares inclusivos e pessoas
           que buscam alternativas culturais para sair de casa, com a mobilidade
@@ -45,7 +51,7 @@ export const Home = () => {
           ))}
         </div>
       </div>
-      <div className="home__col">
+      <div className="home__col hide-mobile">
         <div className="home__image--highlighted">
           <img
             src={highlightedImage}

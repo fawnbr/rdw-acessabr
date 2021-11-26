@@ -1,0 +1,15 @@
+$tablet: 768px;
+$largeMobile: 425px;
+$smallMobile: 300px;
+$desktop: 1023px;
+
+@media (min-width: 1024px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+@media (max-width: $desktop) {
+  .hide-mobile {
+    display: none;
+  }
+}

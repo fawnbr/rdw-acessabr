@@ -1,4 +1,5 @@
 @import '../../styles/colors';
+@import '../../styles/responsive';
 
 .curator{
   &__container{
@@ -46,5 +47,20 @@
       margin-top: 1rem;
     }
   }
-
+  @media (max-width: $largeMobile){
+    &__container{
+      flex-direction: column;
+    }
+    &__details{
+      width: 80%;
+      flex-direction: column;
+      margin: 0 0 4rem 0;
+      h3, h6{
+        align-self: center;
+      }
+      p{
+        text-align: center;
+      }
+    }
+  }
 }

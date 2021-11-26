@@ -14,7 +14,7 @@ export const Header = (props) => {
           / {props.city} - {props.state}
         </span>
       </div>
-      <div className="header__logo--ebac">
+      <div className="header__logo header__logo--ebac">
         <span className="header__logo__support">apoio: </span>
         <img src={logoEbac} alt="Logo EBAC" />
       </div>

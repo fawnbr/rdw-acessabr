@@ -1,3 +1,5 @@
+@import '../../styles/responsive.scss';
+
 .header{
   &__container{
     width: 100%;
@@ -36,6 +38,26 @@
       line-height: 1.4rem;
       font-weight: 400;
     }
+  }
+  @media (max-width: $largeMobile){
+    &__logo{
+      flex-wrap: wrap;
+
+      &__city{
+        margin-top: 1rem;
+      }
+      &__support{
+        margin-bottom: .5rem;
+      }
+      &--ebac{
+        width: 90px;
+        margin-left: 2rem;
+      }
+    }
+
+
+
+
   }
 }
 

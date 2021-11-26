@@ -1,4 +1,5 @@
 @import '../../styles/colors';
+@import '../../styles/responsive';
 
 @mixin displayFlexRow($width: 100%) {
   display: flex;
@@ -44,6 +45,17 @@
       font-weight: 500;
       font-size: 1.8rem;
       padding: 0 .5rem;
+    }
+  }
+
+  @media(max-width: $tablet){
+    &__header{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    &__title{
+      margin-bottom: 2rem;
     }
   }
 }
