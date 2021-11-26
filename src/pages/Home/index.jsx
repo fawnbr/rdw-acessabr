@@ -2,20 +2,8 @@ import { useState } from 'react';
 
 import './styles.scss';
 import highlightedImage from '../../assets/images/highlightedImage.png';
-
+import { places } from '../../utils/places';
 import { Pill } from '../../components/Pill';
-
-const places = [
-  'Praça',
-  'Parque',
-  'Igreja',
-  'Hotel',
-  'Restaurante',
-  'Zoológico',
-  'Farmácia',
-  'Loja',
-  'Aquário',
-];
 
 export const Home = () => {
   const [selectedPill, setSelectedPill] = useState('');

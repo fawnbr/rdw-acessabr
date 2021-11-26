@@ -22,10 +22,10 @@ export const Slider = () => {
       breakpoints={{
         768: {
           slidesPerView: 2,
-          centeredSlides: false,
         },
         1024: {
           slidesPerView: 4,
+          centeredSlides: false,
         },
       }}
       centeredSlides={true}
