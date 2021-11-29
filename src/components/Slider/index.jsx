@@ -3,11 +3,8 @@ import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Card } from '../Card';
 
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-
-import { slides } from '../../utils/slides';
+import 'swiper/scss';
+import 'swiper/scss/navigation';
 
 SwiperCore.use(Navigation);
 
@@ -15,7 +12,6 @@ export const Slider = ({ slides }) => {
   return (
     <Swiper
       modules={[Navigation]}
-      navigation
       breakpoints={{
         768: {
           slidesPerView: 2,
@@ -27,10 +23,15 @@ export const Slider = ({ slides }) => {
       }}
       centeredSlides={true}
       slidesPerView={1}
+      navigation
     >
       {slides.map((slide) => (
         <SwiperSlide key={slide.id}>
-          <Card title={slide.title} photo={slide.photo} />
+          <Card
+            title={slide.title}
+            photo={slide.photo}
+            facilities={slide.facilities}
+          />
         </SwiperSlide>
       ))}
     </Swiper>

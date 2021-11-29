@@ -3,8 +3,6 @@ import { Button } from '../Button';
 
 import './styles.scss';
 
-import { facilities } from '../../utils/facilities';
-
 export const Card = (props) => {
   return (
     <div className="card__container">
@@ -14,8 +12,14 @@ export const Card = (props) => {
       <div className="card__content">
         <h3>{props.title}</h3>
         <ul className="card__facilities">
-          {facilities.map((item) => (
-            <li key={item.id} className="card__facilities__item">
+          {props.facilities.map((item) => (
+            <li
+              key={item.id}
+              className={`card__facilities__item ${
+                item.checked ? ' ' : 'card__facilities__item--unchecked'
+              }
+            `}
+            >
               <img src={item.photo} alt={item.text} title={item.text} />
             </li>
           ))}
@@ -32,4 +36,5 @@ export const Card = (props) => {
 Card.propTypes = {
   title: PropTypes.string.isRequired,
   photo: PropTypes.string.isRequired,
+  facilities: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
