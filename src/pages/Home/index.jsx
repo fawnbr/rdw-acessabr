@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { Pill } from '../../components/Pill';
 import { LocationContext } from '../../contexts/LocationContext';
@@ -7,7 +8,7 @@ import { places } from '../../utils/places';
 import highlightedImage from '../../assets/images/highlightedImage.png';
 import './styles.scss';
 
-export const Home = () => {
+export const Home = (props) => {
   const [selectedPill, setSelectedPill] = useState(null);
 
   const { city, state } = useParams();
@@ -16,9 +17,16 @@ export const Home = () => {
   const { setPlace } = useContext(PlacesContext);
 
   useEffect(() => {
-    setCity(city);
-    setState(state);
-  }, [setCity, setState, city, state]);
+    if (city == null) {
+      setCity(props.city);
+    }
+    if (state == null) {
+      setState(props.state);
+    } else {
+      setCity(city);
+      setState(state);
+    }
+  }, [setCity, setState, city, state, props.city, props.state]);
 
   useEffect(() => {
     if (selectedPill != null && selectedPill !== 'Todos') {
@@ -31,7 +39,7 @@ export const Home = () => {
   return (
     <main id="main-content" className="home__container">
       <div className="home__col">
-        <h1 className="home__title">{city || 'São Paulo'} para todos</h1>
+        <h1 className="home__title">{city || props.city} para todos</h1>
         <div className="home__image--highlighted hide-desktop">
           <img
             src={highlightedImage}
@@ -69,4 +77,9 @@ export const Home = () => {
       </div>
     </main>
   );
+};
+
+Home.propTypes = {
+  city: PropTypes.string,
+  state: PropTypes.string,
 };
