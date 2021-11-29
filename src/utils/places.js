@@ -1,11 +1,12 @@
 export const places = [
   'Praça',
   'Parque',
-  'Igreja',
+  'Teatro',
   'Hotel',
   'Restaurante',
-  'Zoológico',
+  'Museu',
   'Farmácia',
   'Loja',
   'Aquário',
+  'Todos',
 ];

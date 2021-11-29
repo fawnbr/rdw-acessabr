@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Card } from '../Card';
@@ -6,15 +7,11 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import museuLP from '../../assets/images/museu-da-lingua-portuguesa.png';
-import mercadoMunicipal from '../../assets/images/mercado-municipal-sp.png';
-import maspImg from '../../assets/images/masp.png';
-import auditorioIbirapuera from '../../assets/images/auditorio-ibirapuera.png';
-import parqueIndep from '../../assets/images/parque-da-independencia.jpg';
+import { slides } from '../../utils/slides';
 
 SwiperCore.use(Navigation);
 
-export const Slider = () => {
+export const Slider = ({ slides }) => {
   return (
     <Swiper
       modules={[Navigation]}
@@ -31,21 +28,15 @@ export const Slider = () => {
       centeredSlides={true}
       slidesPerView={1}
     >
-      <SwiperSlide>
-        <Card title="Museu da Lingua Portuguesa" photo={museuLP} />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Card title="Mercado Municipal" photo={mercadoMunicipal} />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Card title="Auditório Ibirapuera" photo={auditorioIbirapuera} />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Card title="Museu de Artes de São Paulo" photo={maspImg} />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Card title="Parque da Independência" photo={parqueIndep} />
-      </SwiperSlide>
+      {slides.map((slide) => (
+        <SwiperSlide key={slide.id}>
+          <Card title={slide.title} photo={slide.photo} />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
+};
+
+Slider.propTypes = {
+  slides: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

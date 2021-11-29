@@ -1,11 +1,12 @@
 @import '../../styles/colors';
+@import '../../styles/responsive';
 
 .card{
 
   &__container{
     width: 100%;
     max-width: 222px;
-
+    margin: 0 auto;
   }
 
   &__image{
@@ -56,6 +57,11 @@
       &--unchecked{
         background-color: $lightGray;
       }
+    }
+  }
+  @media (max-width: $largeMobile){
+    &__container{
+
     }
   }
 }

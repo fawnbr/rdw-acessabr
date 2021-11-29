@@ -21,7 +21,11 @@ export const Home = () => {
   }, [setCity, setState, city, state]);
 
   useEffect(() => {
-    setPlace(selectedPill);
+    if (selectedPill != null && selectedPill !== 'Todos') {
+      setPlace(selectedPill);
+    } else {
+      setPlace(null);
+    }
   }, [setPlace, selectedPill]);
 
   return (

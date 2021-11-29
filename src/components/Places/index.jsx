@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { PlacesContext } from '../../contexts/PlacesContext';
 import { Slider } from '../Slider';
 import './styles.scss';
+import { slides } from '../../utils/slides';
 
 export const Places = () => {
   const { place } = useContext(PlacesContext);
@@ -13,6 +14,13 @@ export const Places = () => {
       return place + 's';
     }
   };
+
+  const filteredSlides = place
+    ? slides.filter((slide) => {
+        return slide.category == place;
+      })
+    : slides;
+
   return (
     <section className="places">
       <div className="places__header">
@@ -30,7 +38,12 @@ export const Places = () => {
         </div>
       </div>
       <div className="places__content">
-        <Slider />
+        {filteredSlides.length > 0 && <Slider slides={filteredSlides} />}
+        {filteredSlides.length == 0 && (
+          <p className="places__content--noslides">
+            Não existem lugares disponíveis para esta categoria no momento.
+          </p>
+        )}
       </div>
     </section>
   );
